@@ -1,0 +1,43 @@
+# React Native / Expo specific
+/ios/
+/android/
+.expo/
+web-build/
+expo-env.d.ts
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# IDE / Editor
+.vscode/
+.idea/
+*.sw?
+
+# Logs
+*.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# OS
+.DS_Store
+*.pem
+*.tsbuildinfo
