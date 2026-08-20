@@ -1,44 +1,41 @@
 @import "tailwindcss";
 @import "uniwind";
-
 @source "./components";
 @source "./app";
 @source "./theme";
-
 @layer theme {
   :root {
     @variant light {
-      --color-background: #FFFFFF;
-      --color-surface: #F2F2F7;
-      --color-surface-elevated: #FFFFFF;
-      --color-text: #11181C;
-      --color-text-secondary: #6B7280;
-      --color-text-tertiary: #9CA3AF;
-      --color-border: rgba(0, 0, 0, 0.1);
-      --color-border-strong: #D1D1D6;
-      --color-primary: #007AFF;
-      --color-on-primary: #FFFFFF;
-      --color-error: #FF3B30;
-      --color-success: #34C759;
-      --color-warning: #FF9500;
-      --color-input: #F2F2F7;
-    }
-
-    @variant dark {
-      --color-background: #151718;
-      --color-surface: #1C1C1E;
-      --color-surface-elevated: #2C2C2E;
-      --color-text: #ECEDEE;
-      --color-text-secondary: #8E8E93;
-      --color-text-tertiary: #636366;
-      --color-border: rgba(255, 255, 255, 0.1);
-      --color-border-strong: #48484A;
-      --color-primary: #0A84FF;
-      --color-on-primary: #FFFFFF;
-      --color-error: #FF453A;
+      --color-background: #0A0A0A;
+      --color-surface: #1A1A1A;
+      --color-surface-elevated: #242424;
+      --color-text: #F5F5F5;
+      --color-text-secondary: #C9B3BE;
+      --color-text-tertiary: #8A7A88;
+      --color-border: rgba(255, 255, 255, 0.12);
+      --color-border-strong: #3A3A3A;
+      --color-primary: #FF69B4;
+      --color-on-primary: #0A0A0A;
+      --color-error: #FF6B7D;
       --color-success: #4ADE80;
-      --color-warning: #FF9500;
-      --color-input: #2C2C2E;
+      --color-warning: #FFB26B;
+      --color-input: #1A1A1A;
+    }
+    @variant dark {
+      --color-background: #0A0A0A;
+      --color-surface: #1A1A1A;
+      --color-surface-elevated: #242424;
+      --color-text: #F5F5F5;
+      --color-text-secondary: #C9B3BE;
+      --color-text-tertiary: #8A7A88;
+      --color-border: rgba(255, 255, 255, 0.12);
+      --color-border-strong: #3A3A3A;
+      --color-primary: #FF69B4;
+      --color-on-primary: #0A0A0A;
+      --color-error: #FF6B7D;
+      --color-success: #4ADE80;
+      --color-warning: #FFB26B;
+      --color-input: #1A1A1A;
     }
   }
 }

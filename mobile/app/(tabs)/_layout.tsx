@@ -3,6 +3,7 @@ import { BottomTabBar } from '@react-navigation/bottom-tabs';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { colors } from '@/theme/colors';
 
 export default function TabsLayout() {
   const insets = useSafeAreaInsets();
@@ -25,13 +26,13 @@ export default function TabsLayout() {
       screenOptions={{
         headerShown: false,
         sceneStyle: {
-          backgroundColor: '#FFF8EF',
+          backgroundColor: colors.background,
         },
-        tabBarActiveTintColor: '#F97316',
-        tabBarInactiveTintColor: '#8A7A68',
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.textSecondary,
         tabBarStyle: {
-          backgroundColor: '#FFFFFF',
-          borderTopColor: '#F2E7D8',
+          backgroundColor: colors.surface,
+          borderTopColor: colors.border,
         },
         tabBarLabelStyle: {
           fontWeight: '700',

@@ -3,6 +3,7 @@ import { View, ActivityIndicator } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Text } from '@/components/ui/Text';
 import { Button } from '@/components/ui/Button';
+import { colors } from '@/theme/colors';
 
 export default function NotFoundScreen() {
   const router = useRouter();
@@ -15,7 +16,7 @@ export default function NotFoundScreen() {
       <>
         <Stack.Screen options={{ title: '', headerShown: false }} />
         <View className="flex-1 justify-center items-center bg-background">
-          <ActivityIndicator size="large" color="#00D632" />
+          <ActivityIndicator size="large" color={colors.primary} />
           <Text className="text-base text-text-secondary mt-4">Switching to Appifex...</Text>
         </View>
       </>
@@ -27,9 +28,9 @@ export default function NotFoundScreen() {
       <Stack.Screen options={{ title: 'Oops!' }} />
       <View className="flex-1 justify-center items-center px-8 bg-background">
         <View className="w-20 h-20 rounded-full bg-surface items-center justify-center mb-5">
-          <Ionicons name="alert-circle-outline" size={36} color="#FF3B30" />
+          <Ionicons name="alert-circle-outline" size={36} color={colors.primary} />
         </View>
-        <Text className="text-xl font-semibold mb-2 text-center text-[#FF3B30]">
+        <Text className="text-xl font-semibold mb-2 text-center text-[#FF6B7D]">
           This screen does not exist.
         </Text>
         <Text className="text-text-secondary mb-8 leading-6 text-center">

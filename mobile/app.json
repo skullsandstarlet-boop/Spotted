@@ -1,17 +1,17 @@
 {
   "expo": {
-    "name": "appifex-user-apps",
-    "slug": "appifex-user-apps",
-    "owner": "appifex",
+    "name": "Spotted by Skulls and Starlet Go",
+    "slug": "spotted",
+    "owner": "spotted-by-skulls-and-starlet-go",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "rnstartertemplate",
+    "scheme": "spotted",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.appifex.rnstarter",
+      "bundleIdentifier": "com.skullsandstarletgo.spotted",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
@@ -19,11 +19,11 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#0A0A0A"
       },
       "edgeToEdgeEnabled": true,
       "softwareKeyboardLayoutMode": "pan",
-      "package": "com.appifex.rnstarter"
+      "package": "com.skullsandstarletgo.spotted"
     },
     "web": {
       "bundler": "metro",
@@ -38,7 +38,7 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#0A0A0A"
         }
       ],
       [
@@ -56,12 +56,13 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "33e8d11a-ffd9-460c-a556-92afb6ba754a"
+        "projectId": "49e85d50-f277-4597-a752-9ce916c3a750",
+        "projectSlug": "spotted"
       }
     },
     "runtimeVersion": "1.0.0",
     "updates": {
-      "url": "https://u.expo.dev/33e8d11a-ffd9-460c-a556-92afb6ba754a"
+      "url": "https://u.expo.dev/49e85d50-f277-4597-a752-9ce916c3a750"
     }
   }
 }

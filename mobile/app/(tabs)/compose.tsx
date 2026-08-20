@@ -7,6 +7,7 @@ import { createSpot } from '@/lib/api';
 import { getCurrentCoordinates } from '@/lib/location';
 import type { SpotCategory } from '@/types/spotted';
 import { Text } from '@/components/ui/Text';
+import { colors } from '@/theme/colors';
 
 const CATEGORIES: { value: SpotCategory; label: string; icon: keyof typeof Ionicons.glyphMap }[] = [
   { value: 'general', label: 'General', icon: 'eye' },
@@ -76,7 +77,7 @@ export default function ComposeScreen() {
             value={body}
             onChangeText={setBody}
             placeholder="Spotted: loose dog near the park..."
-            placeholderTextColor="#B5A08B"
+            placeholderTextColor={colors.textTertiary}
             multiline
             maxLength={240}
             style={styles.textArea}
@@ -94,7 +95,7 @@ export default function ComposeScreen() {
                   onPress={() => setCategory(item.value)}
                   style={[styles.optionChip, selected && styles.optionChipSelected]}
                 >
-                  <Ionicons name={item.icon} size={16} color={selected ? '#FFFFFF' : '#8A7A68'} />
+                  <Ionicons name={item.icon} size={16} color={selected ? colors.onPrimary : colors.textSecondary} />
                   <Text style={[styles.optionText, selected && styles.optionTextSelected]}>{item.label}</Text>
                 </Pressable>
               );
@@ -106,7 +107,7 @@ export default function ComposeScreen() {
             value={locationHint}
             onChangeText={setLocationHint}
             placeholder="Near Oak & 3rd, by the playground..."
-            placeholderTextColor="#B5A08B"
+            placeholderTextColor={colors.textTertiary}
             maxLength={120}
             style={styles.input}
           />
@@ -131,10 +132,10 @@ export default function ComposeScreen() {
 
           <Pressable onPress={submitSpot} disabled={!canSubmit} style={[styles.submitButton, !canSubmit && styles.submitButtonDisabled]}>
             {submitting ? (
-              <ActivityIndicator color="#FFFFFF" />
+              <ActivityIndicator color={colors.onPrimary} />
             ) : (
               <>
-                <Ionicons name="paper-plane" size={18} color="#FFFFFF" />
+                <Ionicons name="paper-plane" size={18} color={colors.onPrimary} />
                 <Text style={styles.submitText}>Post anonymously</Text>
               </>
             )}
@@ -142,7 +143,7 @@ export default function ComposeScreen() {
         </View>
 
         <View style={styles.noteCard}>
-          <Ionicons name="time" size={22} color="#F97316" />
+          <Ionicons name="time" size={22} color={colors.primary} />
           <View style={styles.noteCopy}>
             <Text style={styles.noteTitle}>Built for now, not forever</Text>
             <Text style={styles.noteText}>Every sighting expires in 24 hours or less, keeping the feed fresh and local.</Text>
@@ -156,11 +157,11 @@ export default function ComposeScreen() {
 const styles = StyleSheet.create({
   keyboard: {
     flex: 1,
-    backgroundColor: '#FFF8EF',
+    backgroundColor: colors.background,
   },
   screen: {
     flex: 1,
-    backgroundColor: '#FFF8EF',
+    backgroundColor: colors.background,
   },
   content: {
     paddingTop: 64,
@@ -172,33 +173,33 @@ const styles = StyleSheet.create({
     gap: 9,
   },
   kicker: {
-    color: '#F97316',
+    color: colors.accent,
     fontSize: 13,
     fontWeight: '900',
     letterSpacing: 1.4,
     textTransform: 'uppercase',
   },
   title: {
-    color: '#1F1308',
+    color: colors.text,
     fontSize: 32,
     lineHeight: 37,
     fontWeight: '900',
   },
   subtitle: {
-    color: '#745F49',
+    color: colors.textSecondary,
     fontSize: 16,
     lineHeight: 23,
   },
   formCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: colors.surface,
     borderRadius: 30,
     padding: 18,
     gap: 13,
     borderWidth: 1,
-    borderColor: '#F2E7D8',
+    borderColor: colors.border,
   },
   label: {
-    color: '#1F1308',
+    color: colors.text,
     fontWeight: '900',
     fontSize: 15,
     marginTop: 4,
@@ -206,17 +207,17 @@ const styles = StyleSheet.create({
   textArea: {
     minHeight: 132,
     borderRadius: 22,
-    backgroundColor: '#FFF8EF',
+    backgroundColor: colors.surfaceElevated,
     borderWidth: 1,
-    borderColor: '#F2E7D8',
+    borderColor: colors.border,
     padding: 16,
-    color: '#25170C',
+    color: colors.text,
     fontSize: 17,
     lineHeight: 24,
     fontWeight: '700',
   },
   counter: {
-    color: '#9B8975',
+    color: colors.textTertiary,
     fontSize: 12,
     fontWeight: '800',
     textAlign: 'right',
@@ -225,11 +226,11 @@ const styles = StyleSheet.create({
   input: {
     height: 54,
     borderRadius: 18,
-    backgroundColor: '#FFF8EF',
+    backgroundColor: colors.surfaceElevated,
     borderWidth: 1,
-    borderColor: '#F2E7D8',
+    borderColor: colors.border,
     paddingHorizontal: 15,
-    color: '#25170C',
+    color: colors.text,
     fontSize: 15,
     fontWeight: '700',
   },
@@ -245,21 +246,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 10,
     borderRadius: 999,
-    backgroundColor: '#FFF8EF',
+    backgroundColor: colors.surfaceElevated,
     borderWidth: 1,
-    borderColor: '#F2E7D8',
+    borderColor: colors.border,
   },
   optionChipSelected: {
-    backgroundColor: '#F97316',
-    borderColor: '#F97316',
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
   },
   optionText: {
-    color: '#6B5B4A',
+    color: colors.textSecondary,
     fontWeight: '900',
     fontSize: 13,
   },
   optionTextSelected: {
-    color: '#FFFFFF',
+    color: colors.onPrimary,
   },
   durationRow: {
     flexDirection: 'row',
@@ -271,30 +272,30 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 11,
     borderRadius: 16,
-    backgroundColor: '#FFF8EF',
+    backgroundColor: colors.surfaceElevated,
     borderWidth: 1,
-    borderColor: '#F2E7D8',
+    borderColor: colors.border,
   },
   durationChipSelected: {
-    backgroundColor: '#1F1308',
-    borderColor: '#1F1308',
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
   },
   durationText: {
-    color: '#6B5B4A',
+    color: colors.textSecondary,
     fontWeight: '900',
   },
   durationTextSelected: {
-    color: '#FFFFFF',
+    color: colors.onPrimary,
   },
   message: {
-    color: '#BE123C',
+    color: colors.error,
     fontWeight: '800',
     lineHeight: 20,
   },
   submitButton: {
     height: 56,
     borderRadius: 20,
-    backgroundColor: '#F97316',
+    backgroundColor: colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
@@ -305,12 +306,12 @@ const styles = StyleSheet.create({
     opacity: 0.45,
   },
   submitText: {
-    color: '#FFFFFF',
+    color: colors.onPrimary,
     fontSize: 16,
     fontWeight: '900',
   },
   noteCard: {
-    backgroundColor: '#1F1308',
+    backgroundColor: colors.surface,
     borderRadius: 24,
     padding: 18,
     flexDirection: 'row',
@@ -321,12 +322,12 @@ const styles = StyleSheet.create({
     gap: 4,
   },
   noteTitle: {
-    color: '#FFFFFF',
+    color: colors.text,
     fontWeight: '900',
     fontSize: 16,
   },
   noteText: {
-    color: '#F7D9BC',
+    color: colors.textSecondary,
     lineHeight: 20,
   },
 });
